@@ -1,0 +1,3 @@
+DEFAULT_FOLDER = rp60
+PLATFORM = rasberrypi
+BOOTLOADER = rp2040
