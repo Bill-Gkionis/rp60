@@ -11,6 +11,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+
+// Keycode combos
+enum combos {
+    RGB_TOGG,
+    RGB_BRIGHTNESS_UP,
+    RGB_BRIGHTNESS_DOWN,
+    ANIM_CYCLE_NEXT,
+    ANIM_CYCLE_PREV,
+};
+
+const uint16_t PROGMEM test_combo1[] = {KC_NO, KC_L, KC_O, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_NO, KC_L, KC_UP, COMBO_END};
+const uint16_t PROGMEM test_combo3[] = {KC_NO, KC_L, KC_DOWN, COMBO_END};
+const uint16_t PROGMEM test_combo4[] = {KC_NO, KC_L, KC_RIGHT, COMBO_END};
+const uint16_t PROGMEM test_combo5[] = {KC_NO, KC_L, KC_LEFT, COMBO_END};
+
+combo_t key_combos[] = {
+    [RGB_TOGG] = COMBO(test_combo1, RM_TOGG), 
+    [RGB_BRIGHTNESS_UP] = COMBO(test_combo2, RM_VALU),
+    [RGB_BRIGHTNESS_DOWN] = COMBO(test_combo3, RM_VALD),
+    [ANIM_CYCLE_NEXT] = COMBO(test_combo4, RM_NEXT),
+    [ANIM_CYCLE_PREV] = COMBO(test_combo5, RM_PREV)
+};
+
+
 // Configurations for RGB Matrix animations
 led_config_t g_led_config = { {
   // Key Matrix to LED Index
@@ -34,10 +59,10 @@ led_config_t g_led_config = { {
     { 187, 64 }, { 205, 64 }, { 224, 64 }
 }, {
   // LED Index to Flag
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    1, 1, 1
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    4, 4, 4
 } };
